@@ -15,6 +15,17 @@ git repository on your local machine:
 - push the local repository to your GitHub repository
 - visit the GitHub repo to make sure the contents were pushed
 
+mkdir clone_wars
+cd clone_wars 
+git clone https://github.com/martin-martin/clone-test.git
+cd clone-test 
+git remote add clonetest https://github.com/daniel10012/clone-test.git
+git push -u clonetest master
+git remote -v
+
+
+
+
 ## Initializing a new git repository:
 - in your CodingNomads folder, create new folder git_practice
 - inside git_practice:
