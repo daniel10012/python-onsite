@@ -7,6 +7,7 @@ Challenge: find another way to do this using a package you can import
 
 '''
 
+import math
 
 operator = -1
 x = 1
@@ -16,11 +17,10 @@ for i in range(3, 1000, 2):
         x += 1/i
     else:
         x -= 1/i
-
-operator *= -1
+    operator *= -1
 
 print(4*x)
 
 
-import math
+
 print(math.pi)
