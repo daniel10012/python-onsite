@@ -6,3 +6,13 @@ Print the result.
 NOTE: We will be using the input() function. This is demonstrated below.
 
 '''
+
+import random
+
+num = random.randint(1,1000000000)
+
+if num%2 == 0:
+    print ("even")
+else:
+    print ("odd")
+

@@ -19,6 +19,33 @@ Example output:
 '''
 
 
+sentence = "I love to work with dictionaries!"
+
+# dict_sentence = {}
+# for i in sentence:
+#     if i == " ":
+#         continue
+#     dict_sentence[i] = sentence.count(i)
+
+
+dict_sentence = {"Upper_case" : 0, "Lower_case" : 0 , "Punctuation" : 0 , "Characters" : 0 }
+
+for i in sentence:
+    if i == " ":
+        continue
+    if i in ["!", "?", ",", "."]:
+        dict_sentence["Punctuation"] += 1
+    elif i == i.upper():
+        dict_sentence["Upper_case"] += 1
+    elif i == i.lower():
+        dict_sentence["Lower_case"] += 1
+
+    dict_sentence["Characters"] += 1
+
+print(dict_sentence)
+
+for key, value in dict_sentence.items():
+    print(key,": ",value)
 
 
 

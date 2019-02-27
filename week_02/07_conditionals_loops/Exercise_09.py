@@ -13,3 +13,16 @@ The output should look something like this:
 	10|20|30|40|50|60|70|80|90|100|
 
 '''
+
+for i in range(1,11):
+    for j in range(1,11):
+        multiple = i*j
+        if multiple in range(0,10):
+            multiple = str(i*j) + "  "
+        if multiple in range(10,100):
+            multiple = str(i*j) + " "
+        if j < 10:
+            print(multiple,"|", end = " ")
+        else:
+            print(multiple, "|")
+
