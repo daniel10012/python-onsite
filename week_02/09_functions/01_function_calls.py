@@ -6,10 +6,15 @@ at least one other function and use the return value to do something.
 
 
 
-def squared(number):
+def square(number):
     return number**2
 
 def circumference(r):
-    circumference =
+    return 3.14 * square(r)
 
-def print_sentence()
+def third_power(number):
+    return square(number)*number
+
+print(square(2))
+print(circumference(4))
+print(third_power(3))
