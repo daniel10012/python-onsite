@@ -12,7 +12,11 @@ Tip: Use python's 'random' module.
 
 import random
 
-random_num = random.randint(1,100)
+random_num = random.randint(1,10)
 
-print(random_num)
+r = int(input("choose a random num"))
 
+while r != random_num:
+    r = int(input("choose a random num"))
+
+print(f"you found it !!! it was {r}")

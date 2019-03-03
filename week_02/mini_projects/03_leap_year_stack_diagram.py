@@ -38,3 +38,19 @@ http://www.pythontutor.com/visualize.html#mode=edit
 for better visual understanding and support in creating the stack diagram.
 
 '''
+
+def leapyear(year):
+    if year%400 == 0:
+        return True
+    elif year%4 == 0 and year%100 == 0:
+        return False
+    elif year%4 == 0:
+        return True
+    else:
+        return False
+
+print(leapyear(2000))
+
+# for i in range(1900,2600,100):
+#     print(i, leapyear(i))
+
