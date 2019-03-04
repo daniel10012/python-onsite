@@ -39,6 +39,7 @@ for better visual understanding and support in creating the stack diagram.
 
 '''
 
+
 def leapyear(year):
     if year%400 == 0:
         return True
@@ -48,6 +49,7 @@ def leapyear(year):
         return True
     else:
         return False
+
 
 print(leapyear(2000))
 

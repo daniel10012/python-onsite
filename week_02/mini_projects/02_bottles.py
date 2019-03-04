@@ -26,6 +26,9 @@ for i in range (99,0,-1):
               f"Take one down and pass it around, no more bottles of beer on the wall.\n"
               f"\nNo more bottles of beer on the wall, no more bottles of beer.\n"
               f"Go to the store and buy some more, {100-i} bottles of beer on the wall.")
+    elif i == 2:
+        print(f"{i} bottles of beer on the wall, {i} bottles of beer.\n"
+              f"Take one down and pass it around, {i - 1} bottle of beer on the wall.\n")
     else:
         print(f"{i} bottles of beer on the wall, {i} bottles of beer.\n"
           f"Take one down and pass it around, {i-1} bottles of beer on the wall.\n")

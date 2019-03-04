@@ -30,44 +30,32 @@ offended, find and decode some of them.
 
 '''
 
-# #def rotate_word(word, num):
-#     """ This function acts like a Casear Cipher.
-#
-#     Replaces an input letter with another letter a fixed
-#
-#     number of spaces farther down the alphabet
-#
-#     Args:
-#
-#     * letter (string) - any upper case or lower case letter
-#
-#     * num (integer) - any integer value to shift to a new letter
-#         """
-
-
-def rotate_word(word,key):
+def rotate_word(word, num):
 
     rotated_word = ""
-    for i in word.lower():
-        if key > -1000:
-            rotated_word += chr((ord(i)-ord("a")+key%26)
-        # if key <0:
-        #     rotated_word += ord(i)
+
+    for letter in word:
+
+        if ord(letter) in range(97,123):
+            letter_index = ord(letter) - ord("a")
+            rotated_letter = chr(ord("a") + (letter_index + num) % 26)
+
+        elif ord(letter) in range(65, 91):
+            letter_index = ord(letter) - ord("A")
+            rotated_letter = chr(ord("A") + (letter_index + num) % 26)
+
+        rotated_word += rotated_letter
+
+    return rotated_word
 
 
 
-    return (rotated_word)
 
-print (rotate_word("cheer",59))
-print (rotate_word("melon",-10))
+print(rotate_word("cheer", 7))
 
 
+print(rotate_word("melon", -10))
 
 
-# a = -5%3
-# b = (-%26)
-#
-# print(a)
-# print(b)
 
-
+print(rotate_word("b", 25))
