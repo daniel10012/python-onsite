@@ -4,4 +4,3 @@ strings
 objects
 methods 
 classes
-aqswedfrtghyujiklopzxcv

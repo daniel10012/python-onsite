@@ -6,3 +6,16 @@ with specific except statements, and continue to do the calculation
 only if neither of them applies.
 
 '''
+
+try:
+    with open("integers.txt","r")as fin:
+        numbers = fin.read().split()
+
+except FileNotFoundError:
+            print("this file doesn't exist")
+
+
+print(numbers)
+
+
+
