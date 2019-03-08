@@ -1,0 +1,296 @@
+
+    - change directories?
+    - list the contents of a folder?
+    - print the path of the current directory?
+    - move a file from one location to the another?
+    - copy a file from one location to another?
+    - create a file?
+    - create a folder?
+    - delete a file?
+    - delete a folder?
+    - delete a folder that contains a file?
+    - print the contents of a file?
+    - edit the contents of a file?
+
+1. cd
+2. ls -al
+3. pwd
+4. mv file directory
+5. cp file directory
+6. touch or vim
+7. mkdir namefolder
+8. rm file
+9. rm -rf folder
+10. rm -rf
+11. cat file
+12. either echo >> or vim file
+
+- Answer the following question about Git and Github:
+    - What is a branch?
+    - What is a remote?
+
+1.branch is a development line of work
+2.remote is repository on github linked to your local repository(copy of git in a cloud)
+
+- What are the commands to do the following?
+    - initialize a git repository
+    - clone a repository from Github
+    - add a file to the staging area
+    - make a commit
+    - push to Github
+    - pull from Github
+    - see the names of the branches
+    - see the names of the remotes
+    - add a new remote
+
+1. git init
+2. git clone www.blbla
+3.git add .
+4. git commit -m "message"
+5.git push nameremote master
+6. git pull namerote master
+7. git branch
+8. git remote -v
+9. git remote add <remote_name>  www.blabla
+
+- Describe a variable and a value through their relationship.
+
+- What are five common data types in Python?
+
+- What is the difference between an expression and a statement?
+
+- What are relational operators?
+
+- What is the difference between == and = ?
+
+- Demonstrate the use of an if/elif/else conditional.
+
+- What does mean to have a function that "takes" an argument?
+
+- What is a return value?
+
+- How do you import a class to one of your programs?
+
+1. variable is assigned a value
+2. int, str, list, tuple,dict
+3.expression evaluates to a value
+atatement evaluates to something
+4. < > ==
+5.== checks the value  = assigns a value
+6. if this:
+	do that
+   else:
+	do this
+7.it uses this argument to pass as parameter in its internal processing
+8. it is the value given back by a function
+9. from file import Class
+
+- Do parameters and variables inside of a function exist outside of it?
+Why or why not?
+
+- What is the difference between a "fruitful" function and a void function?
+
+- What does a void function always return in Python?
+
+- What are some of the reasons we separate our code into functions?
+
+- What is the difference between the following two statements?
+    import math
+    <and>
+    from math import *
+    <and>
+    import math as m
+
+    How can you use the functions of the math module in each case?
+
+1.no, local scope
+2.fruitful returns something , void returns nothing
+3. None
+4. compatmentalization for cleaner code and better overview, reusability
+5. import math import the whole module: math.function
+from math import * import all module functions  function
+import math as m aliases so we can call its functions faster : m.function
+
+- What is an index?
+
+- How do you use slicing to produce the string "coding" from the string
+"I love coding!!!"?
+
+- How do you invoke the replace() method on the string
+'coding is the best' to replace all 's' characters with 'z' characters?
+
+- What is the most important difference between a list and a string?
+
+- How do you use a delimiter other than a whitespace with the split() method?
+
+- If two objects are identical, does that also make them equivalent?
+Why or why not? How can you prove it in code?
+
+- What is it called when an object has more than one reference to it?
+
+1.tells us the postion of an element in an iterable
+2. string[-9:-3]
+3. string.replace("s","z")
+4. string immutable
+5.split("character")
+6.yes identical implie equivalent
+a is b True  then a==b True
+7.aliasing
+
+- How do you add an item to the dictionary first_dict using square
+    brackets?
+
+- Write an example for-loop to traverse a dictionary loop_dict and
+    print out the keys and values.
+
+- What are the three primary tenants of Object Oriented Programming (OOP)?
+
+- Why is OOP useful?
+
+example of CLass attribute What is a class?
+
+- What are class attributes?
+
+- What does it mean when an object is embedded?
+
+- How is a method different than a function?
+
+1. first_dict[key] = value
+2. for key, value in dict.items():
+	print(key, value)
+3. encapsulation , polymorphismr
+4. easier to use with encapsulation of all methods to object, easily accessible
+5. a class is an object with attributes and methods
+6. attributes are elements proper to a class that can be passed as arguments
+7. an embedded object is created inside another object
+8. a method can be applied only to its class
+
+- What is the `__init__` method and what is it used for?
+
+- Give an example `__init__` method for a `Car` class with attributes:
+`make`, `model` and `year`.
+
+- How does a class inherit from another class?
+
+- Explain the difference between a class attribute and an instance attribute.
+
+- How do you open a file in write mode? Write some example code below.
+
+- Can you have a 'try' without an 'except'? Can you have an 'except' without
+a 'try'? Bonus: How does 'else' fit into this picture?
+
+1. __init__ is used to set the parameters of a class
+2. class Car:
+      def__intit__(make, year,model):
+	self.make = make
+	self.year = year
+	self.color = model
+3. class A(B)
+4.class attribute in the general standard of the class (ex : make)
+instance attribute is the specific attribute of an instance (ex: toyota)
+5. open with (file, "w") as fout
+6. no try without except, no except without try
+else gets executed if no error is catched in except:
+
+- Why is the following code bad form?
+
+    try:
+        print(10/0)
+    except Exception as exc:
+        print(exc)
+    except ZeroDivisionError as zde:
+        print zde
+
+- Write a function that takes in the name of a file, reads the contents
+of that file word by word and places each word in a list, then prints
+the list to the console.
+
+- Create a custom exception below.
+
+- Write a very simple function that demonstrates raising the exception from the
+previous question.
+
+1. exception not define, no() for print
+2. with open (file, "r") as fin:
+	content = file.readlines.split()
+	print content
+3. try:
+	with open (file, "r") as fin:
+        content = file.readlines.split()
+        print content
+   except FileNotFoundError as fnf:
+	print(fnf)
+4.def return_words(file):
+	try:
+        	with open (imaginaryfile, "r") as fin:
+        		content = file.readlines.split()
+        		print content
+  	except FileNotFoundError as fnf:
+        print(fnf)
+
+
+- Explain the following keywords:
+    -try: tries whats idented inside
+    -except: if error raised, executes that block
+    -raise: custom call an Error
+    -else: executed if try doesnt raise error
+    -finally: executed after error or no error
+    -return: gives back a value
+    -break: breaks out of a loop
+    -continue: continues the loop from beginning
+
+- When should you throw an exception rather than catch the exception?
+
+- Demonstrate a while loop, and a for loop, that print out every other
+odd number between 1000 and 0 in a descending order:
+
+- How comfortable do you feel answering the questions above?
+
+- How do you create and activate a virtual environment?
+
+1.?
+2.num = 1000
+while num>0:
+	if num % 2 == 1:
+		print(num)
+
+for num in range(1,1000,-2):
+	print(num)
+3. good
+4. ? 
+
+
+ - What is the variable __name__ used for?
+
+- Write code that prints out all items passed to a function.
+The amount of items should be able to be different for every function call.
+
+1.check if spacename if main to execute function in the file
+2. def funct(*args)
+	print(args) ???????
+
+- Write a list comprehension to add 1 to all items in a list of
+integers called "list_"
+
+- What does enumerate() do?
+
+- You have an object that prints "<generator object <genexpr> at 0x104150eb8>"
+to the console. How can you access its values?
+
+1. [i+1 for i in list_]
+2.gives count??
+3.by .method ??
+
+- What is the advantage of using a generator object compared to a list?
+
+- What are the key (conceptual) points when constructing a decorator
+function? What does it need to do?
+
+- When are decorator functions useful?
+
+- What happens when you use the @decorator syntax when defining a function?
+
+1.??
+2.??
+3. ??
+4.? 	
