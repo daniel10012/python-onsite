@@ -10,7 +10,7 @@ The script should keep prompting the user until they enter an integer.
 num = ""
 while type(num) != int:
     try:
-        num = int(input("please input an integer"))
+        num = (input("please input an integer"))
     except ValueError:
         print("this is not an integer")
 

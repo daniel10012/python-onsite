@@ -20,6 +20,7 @@ class Hero:
             print("you won the fight!, let's continue the quest")
         else:
             self.health -= 30
+            print(f"you lost the fight and are terribly wounded, your health is now {self.health}")
         #put something for subclasses here
 
 
@@ -46,26 +47,33 @@ class Opponent:
 
 class Alien(Opponent):
 
-    def __init__(self, name, strenght,pulverize):
+    def __init__(self, name, strenght):
         super().__init__(name, strenght)
-        self.pulverize = "pulverize"
 
+    def pulverize(self, hero):
+        hero.health = 0
 
 class Zombie(Opponent):
 
-    def __init__(self, name, strenght, eat):
+    def __init__(self, name, strenght):
         super().__init__(name, strenght)
-        self.bite = "eats"
+
+    def eat(self,hero):
+        hero.health = 0
 
 class Vampire(Opponent):
 
-    def __init__(self, name, strenght, suckblood):
+    def __init__(self, name, strenght):
         super().__init__(name, strenght)
-        self.suckblood = "sucks blood"
+
+    def suckblood(self,hero):
+        hero.health = 0
 
 
 
 
+if __name__ == '__main__':
+    print(Zombie)
 
 
 

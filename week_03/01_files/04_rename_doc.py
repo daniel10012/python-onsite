@@ -15,3 +15,23 @@ Source: Read through the "Files" chapter in Think Python 2e:
 http://greenteapress.com/thinkpython2/html/thinkpython2015.html
 
 '''
+
+
+def sed(pattern_string, replacement_string, file1,file2):
+    try:
+        with open(file1,"r") as fin:
+            content = fin.readlines()
+    except FileNotFoundError:
+        print(f"{file1} doesn't exist")
+
+
+    try:
+        with open(file2, "w") as fout:
+            for line in content:
+                new_line = line.replace(pattern_string,replacement_string)
+                fout.write(new_line)
+    except UnboundLocalError:
+        pass
+
+sed("strings", "Notstrings", "words3.txt", "wordss3.txt")
+

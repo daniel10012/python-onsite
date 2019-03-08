@@ -15,12 +15,12 @@ def play_game():
     hero = Hero("Bob",10)
 
     opponents = [
-        Vampire("Ming", 3),
-        Vampire('Robert', 6),
-        Zombie('Martin', 10),
+        Alien("Ming", 3),
+        Zombie('Robert', 6),
+        Vampire('Martin', 10),
         Zombie('Casey', 20),
-        Alien('Fred', 25),
-        Alien('Blake', 30)
+        Vampire('Fred', 25),
+        Zombie('Blake', 30)
     ]
 
 

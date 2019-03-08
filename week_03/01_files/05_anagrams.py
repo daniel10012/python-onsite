@@ -15,3 +15,55 @@ Source: Read through the "Files" chapter in Think Python 2e:
 http://greenteapress.com/thinkpython2/html/thinkpython2015.html
 
 '''
+#DONE
+
+from anagram_sets import *
+import random
+
+
+# d = all_anagrams("words.txt")
+#
+# print(d)
+# print(filter_length(d,6))
+# print_anagram_sets(d)
+# print_anagram_sets_in_order(d)
+
+
+#stores anagram dictionnaries in a list
+def store_anagrams(file_names):
+    shelf = []
+    for file in file_names:
+        shelf.append(all_anagrams(file))
+    return shelf
+
+def read_anagrams(word,file_name):
+    d = all_anagrams(file_name)
+    s = signature(word)
+    try:
+        print(d[s])
+    except KeyError:
+        print(f"no anagrams of \"{word}\" were found in {file_name}")
+
+read_anagrams("ospt","words.txt")
+
+print(store_anagrams(["words.txt","words2.txt"]))
+
+
+#just fun function finding all anagrams of a word way too long with random
+# def anagram(word):
+#     letters = list(word)
+#     anag = word
+#     anags = []
+#     while len(anags) < 2:
+#         if anag not in anags:
+#             anags.append(anag)
+#             random.shuffle(letters)
+#             anag = ''.join(letters)
+#         else:
+#             continue
+#     return anags
+#
+# print(anagram("abc"))
+
+
+#anagram("rwg")

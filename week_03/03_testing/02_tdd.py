@@ -8,3 +8,6 @@ fail and write tests that will check and prevent failure.
 You do not need to implement the actual functions after writing the tests but you may.
 
 '''
+
+'''the first function, inv, is going to return the inverse of the sum of 2 numbers : 1/(x+y)'''
+

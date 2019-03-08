@@ -3,11 +3,13 @@ Write a script that reads in the contents of words.txt and writes the contents i
 to a new file words_reverse.txt.
 '''
 
+#DONE
 
 #reverse the whole text
-# with open("words.txt", "r") as fin:
-#     text = fin.read()
-#     reversed_text = text[::-1]
+with open("words.txt", "r") as fin:
+    text = fin.read()
+    reversed_text = text[::-1]
+    print(reversed_text)
 
 #reverse words
 # with open("words.txt","r") as fin:

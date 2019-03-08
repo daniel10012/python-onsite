@@ -8,14 +8,19 @@ only if neither of them applies.
 '''
 
 try:
-    with open("integers.txt","r")as fin:
+    with open("integerss.txt","r")as fin:
         numbers = fin.read().split()
 
 except FileNotFoundError:
-            print("this file doesn't exist")
+    print("this file doesn't exist")
+
+try:
+    first_number = int(numbers[0])
+    print(first_number + 5)
+except NameError:
+    pass
 
 
-print(numbers)
 
 
 

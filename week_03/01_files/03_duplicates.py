@@ -19,3 +19,58 @@ http://greenteapress.com/thinkpython2/html/thinkpython2015.html
 
 '''
 
+import os
+import hashlib
+
+#returns a hexadigest hashing of a portion of a file
+def hashing(file):
+    BLOCKSIZE = 65536
+    hasher = hashlib.md5()
+    with open(file, 'rb') as afile:
+        buf = afile.read(BLOCKSIZE)
+        while len(buf) > 0:
+            hasher.update(buf)
+            buf = afile.read(BLOCKSIZE)
+    return hasher.hexdigest()
+
+#find all files in current directory and subdirectories
+allfiles = []
+for root, dirs, files in os.walk("files", topdown=False):
+   for name in files:
+      allfiles.append(os.path.join(root, name))
+   for name in dirs:
+      allfiles.append(os.path.join(root, name))
+
+#keeping only .jpg files
+jpgfiles = allfiles.copy()
+for file in jpgfiles:
+    if file[-4:] != ".jpg":
+        jpgfiles.remove(file)
+
+#making dictionary of hashes: key = hash value = list of same files
+dictjpg = {}
+for file in jpgfiles:
+    h = hashing(file)
+    if h not in dictjpg.keys():
+        dictjpg[h] = [file]
+    else:
+        dictjpg[h].append(file)
+
+
+#telling the user which files are the same
+for key, value in dictjpg.items():
+    if len(dictjpg[key]) > 1:
+        print(f"the files {value} are the same")
+
+
+
+
+
+
+
+
+
+
+
+
+

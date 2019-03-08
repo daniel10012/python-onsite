@@ -1,10 +1,10 @@
 I am learning Python so far !
 we’ve learned:
-strings
+Notstrings
 objects
 methods 
 classes
-strings
+Notstrings
 wordwithlotofletters
 stecboj
 opts
@@ -16,4 +16,4 @@ tops
 qwerty
 ytrewq
 wqerty
-strings strings strings
+Notstrings Notstrings Notstrings

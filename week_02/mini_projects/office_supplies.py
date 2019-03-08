@@ -25,3 +25,14 @@ office = [
     {"full_name": "Creed Bratton", "item": "mung beans"},
     {"full_name": "Darryl Philbin", "item": "forklift"},
 ]
+
+
+
+for dict in office:
+    first_name = dict["full_name"].split()[0]
+    last_name = dict["full_name"].split()[1].upper()
+    fav_item = dict["item"]
+    if len(first_name+" "+last_name)<12:
+        print(f"{last_name} {first_name}\t\t{fav_item}")
+    else:
+        print(f"{last_name} {first_name}\t{fav_item}")
