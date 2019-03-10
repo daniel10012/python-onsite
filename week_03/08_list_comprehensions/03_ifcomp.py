@@ -7,3 +7,8 @@ Tip: Use an if statement in the listcomp
 '''
 
 fish_tuple = ('blowfish', 'clownfish', 'catfish', 'octopus')
+
+
+result = [fish for fish in fish_tuple if fish[-4:] == "fish"]
+
+print(result)

@@ -9,3 +9,15 @@ TIP:
     very common. head over to SO and find a solution!
 
 '''
+
+
+import requests as req
+import re
+
+resp = req.get("https://codingnomads.co/")
+
+content = resp.text
+
+stripped = re.sub('<[^<]+?>', '', content)
+print(stripped)
+

@@ -8,3 +8,8 @@ Then open up your online shop ;)
 
 colors = ["neon orange", "spring green"]
 sizes = ["S", "M", "L"]
+
+cartesian_product = [i +" " +j for i in colors for j in sizes]
+
+print(cartesian_product)
+
