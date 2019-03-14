@@ -11,5 +11,8 @@ nums = range(1, 1000000)
 gen = (x for x in nums if x % 1111 == 0)
 
 for i in gen:
-    print (i//1111)
+    print(i//1111)
 
+# my_generator = (num // 1111 for num in nums if num % 1111 == 0)
+#
+# print([i for i in my_generator])

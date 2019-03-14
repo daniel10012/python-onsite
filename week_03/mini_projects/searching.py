@@ -54,4 +54,4 @@ for type in unique_types:
 
 #print(dict_files_bytype)
 
-print(dict_files_bytype[".md"])
+print(dict_files_bytype[".jpg"])

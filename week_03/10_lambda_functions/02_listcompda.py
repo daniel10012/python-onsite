@@ -21,6 +21,9 @@ print(gen.__next__())
 
 print(list(gen))
 
+# mylambdaexp = lambda mylist: [name.startswith("D") for name in mylist]
+#
+# print(mylambdaexp(names))
 
 
 print(list(gen))
