@@ -8,3 +8,43 @@ Fetch and prepare all the image links - and only the image links!
          your computer using python?
 
 '''
+
+from requests_html import HTMLSession
+
+session = HTMLSession()
+r = session.get('https://www.instagram.com/martin.breuss/')
+r.html.render()
+
+
+
+
+list_img = [link for link in r.html.absolute_links if link[:28] == "https://www.instagram.com/p/"]
+
+
+print(list_img)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

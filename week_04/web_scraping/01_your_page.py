@@ -6,3 +6,4 @@ BONUS: extend your python program so that it reads your original HTML file
        and returns True if the HTML from the response is the same as the
        the contents of the original HTML file.
 '''
+
