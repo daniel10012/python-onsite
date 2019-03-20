@@ -12,22 +12,47 @@ Store the information in a nicely formatted text file.
 
 '''
 
+
 from requests_html import HTMLSession
 import random
 
 url = "https://en.wikipedia.org/wiki/Paris"
 
 session = HTMLSession()
+
 r = session.get('https://en.wikipedia.org/wiki/Paris')
 
-about = r.html.find("div.table", first=True)
+text_infobox = r.html.find("#mw-content-text > div > table.infobox.geography.vcard", first = True)
+#or
+#text_infobox = r.html.xpath("//*[@id='mw-content-text']/div/table[1]", first = True).text
 
-print(about)
-#about = r.html.xpath("//*[@id='mw-content-text']/div/table[1]")[0]
+#print(text_infobox)
 
-#print(about.text)
+# for tr in text_infobox.find('tr'):
+#     print(tr.text)
 
-#img1 = r.html.xpath("//*[@id='mw-content-text']/div/div[15]/div/a/img")[0]
+# images = r.html.find("img")
+#
+# for image in images:
+#     link = "https:" + image.attrs["src"]
+#     print(link)
+
+# facts = r.html.find("p")
+#
+# rand_fact = random.choice(facts)
+#
+# print(rand_fact.text)
+
+title = "h1"
+titles = r.html.find(title)
+
+for title in titles:
+    t.append(title.text.replace("[edit]",""))
 
 
+links = list(r.html.absolute_links)
+
+resources = t + links
+
+print(resources)
 
