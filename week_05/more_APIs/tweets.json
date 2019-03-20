@@ -1,0 +1,13 @@
+[{
+		"tweet": "hello world",
+		"author": "jean mich"
+	},
+	{
+		"tweet": "test",
+		"author": "bob"
+	},
+	{
+		"tweet": "gili",
+		"author": "gerard"
+	}
+]
