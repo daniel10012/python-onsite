@@ -8,3 +8,7 @@ DATABASE_URI = f'postgres+psycopg2://{username}:{password}@localhost:5432/dvdren
 engine = sqa.create_engine(DATABASE_URI)
 connection = engine.connect()
 metadata = sqa.MetaData()
+
+
+#Select all the actors with the first name of your choice
+
