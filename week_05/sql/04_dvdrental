@@ -3,15 +3,67 @@ them below:
 
 - Select all the actors with the first name of your choice
 
+SELECT *
+FROM actor
+WHERE first_name = 'Penelope';
+
 - Select all the actors and the films they have been in
+
+SELECT a.first_name, a.last_name, f.title
+FROM actor as a
+JOIN film_actor as fa
+ON fa.actor_id = a.actor_id
+JOIN film as f
+ON fa.film_id = f.film_id
+WHERE a.first_name = 'Penelope'
 
 - Select all the actors that have appeared in a category of you choice comedy
 
-- Select all the comedic films and that and sort them by rental rate
+SELECT a.first_name, a.last_name, f.title, f.film_id, c.name
+FROM actor as a
+JOIN film_actor as fa
+ON fa.actor_id = a.actor_id
+JOIN film as f
+ON fa.film_id = f.film_id
+JOIN film_category as fc
+ON fc.film_id = f.film_id
+JOIN category as c
+ON fc.category_id = c.category_id
+WHERE c.name = 'Comedy'
+
+- Select all the comedic films and sort them by rental rate
+
+SELECT f.title, c.name, f.rental_rate
+FROM category as c
+JOIN film_category as fc
+ON fc.category_id = c.category_id
+JOIN film as f
+ON f.film_id = fc.film_id
+WHERE C.NAME = 'Comedy'
+ORDER BY rental_rate DESC;
 
 - Select all the information about the staff in a zip code of your choice
 
+SELECT s.first_name, s.last_name, a.postal_code
+FROM staff as s
+JOIN address as a
+ON a.address_id = s.address_id
+WHERE a.postal_code = '18743';
+
 - Using one of the statements above, add a GROUP BY
+
+select  sub.name, count(sub.film_id) as number_of_film from (SELECT f.film_id, a.first_name, a.last_name, f.title,  c.name
+FROM actor as a
+JOIN film_actor as fa
+ON fa.actor_id = a.actor_id
+JOIN film as f
+ON fa.film_id = f.film_id
+JOIN film_category as fc
+ON fc.film_id = f.film_id
+JOIN category as c
+ON fc.category_id = c.category_id) as sub group by sub.name
+ORDER BY number_of_film DESC
+;
 
 - Using on of the statements above, add a ORDER BY
 
