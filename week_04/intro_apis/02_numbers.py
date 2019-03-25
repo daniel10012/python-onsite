@@ -47,11 +47,14 @@ with open("prime_numbers.json","w") as fout:
     for i in range(2,1000):
         if is_prime(i):
             current_url = base_url + str(i) + extension
-            r = requests.get(current_url).json()
-            prime_dict[i] = r["text"]
+            try:
+                r = requests.get(current_url).json()
+                prime_dict[i] = r["text"]
+            except json.decoder.JSONDecodeError:
+                continue
     json.dump(prime_dict,fout)
 
-
+print(prime_dict)
 
 
 

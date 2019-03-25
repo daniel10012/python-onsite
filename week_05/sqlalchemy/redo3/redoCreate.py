@@ -8,7 +8,7 @@ Redo the exercises from '03_pgadmin.txt' in the SQL labs using SQLAlchemy .
 - create a new blank database with the name "car_dealership2" '''
 
 
-from sqlalchemy import create_engine, MetaData
+from sqlalchemy import create_engine, MetaData, insert
 from sqlalchemy import Table,Column, Integer, String, Boolean, SmallInteger, Date
 from config import username, password
 from pprint import pprint
@@ -60,8 +60,12 @@ metadata.create_all(engine)
     - make
     - model
     - color
-    - year
+    - year'''
 
+
+
+
+'''
 - populate these tables with at least 5 records each - the more the merrier
 
 - Write the SQL queries to accomplish the following: (write each of your queries below for review)
