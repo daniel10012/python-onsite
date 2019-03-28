@@ -14,3 +14,22 @@ HINTS:
 BONUS: Explore the logging package for easier tracking
 
 '''
+
+import os
+import requests
+from secrets import NOMICS_KEY
+from pprint import pprint
+import logging
+
+
+
+url = "https://api.nomics.com/v1/prices?key=" + NOMICS_KEY
+
+currencies = requests.get(url).json()
+
+for currency in currencies:
+    if currency["currency"] == "BTC":
+        print(currency["price"])
+
+
+
