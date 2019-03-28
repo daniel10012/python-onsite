@@ -119,4 +119,6 @@ WHERE id = 6;
 
     - delete one record from the database
 
-DELETE FROM cars WHERE make = 'lada';'''
+DELETE FROM cars WHERE make = 'lada';
+
+'''

@@ -17,9 +17,9 @@ import requests
 import os
 
 url = "https://pokeapi.co/api/v2/pokemon/"
-url_img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/.png"
+url_img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"
 
-for i in range(1,2):
+for i in range(1,151):
     current_url = url +str(i)+"/"
     r = requests.get(current_url).json()
     name = r["forms"][0]["name"]
