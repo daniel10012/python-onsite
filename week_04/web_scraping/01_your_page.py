@@ -11,9 +11,11 @@ BONUS: extend your python program so that it reads your original HTML file
 
 import requests
 
+
 url = "https://daniel10012.github.io/staticpage/"
 
 r = requests.get(url).text
+
 
 with open("copymysite.html", "w") as fout:
     fout.write(r)
@@ -27,3 +29,6 @@ with open("original.html", "r") as fin:
     content_original = fin.read()
     if r == content_original:
         print("site = original")
+    else:
+        print("oops")
+

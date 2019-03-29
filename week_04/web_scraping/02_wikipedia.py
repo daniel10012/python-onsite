@@ -15,6 +15,7 @@ Store the information in a nicely formatted text file.
 
 from requests_html import HTMLSession
 import random
+import time
 
 url = "https://en.wikipedia.org/wiki/Paris"
 
@@ -26,16 +27,17 @@ text_infobox = r.html.find("#mw-content-text > div > table.infobox.geography.vca
 #or
 #text_infobox = r.html.xpath("//*[@id='mw-content-text']/div/table[1]", first = True).text
 
-#print(text_infobox)
-
+# print(text_infobox.find('tr'))
+#
 # for tr in text_infobox.find('tr'):
 #     print(tr.text)
 
-# images = r.html.find("img")
-#
-# for image in images:
-#     link = "https:" + image.attrs["src"]
-#     print(link)
+
+images = r.html.find("img")
+
+for image in images:
+    link = "https:" + image.attrs["src"]
+    print(link)
 
 # facts = r.html.find("p")
 #
@@ -43,16 +45,16 @@ text_infobox = r.html.find("#mw-content-text > div > table.infobox.geography.vca
 #
 # print(rand_fact.text)
 
-title = "h1"
-titles = r.html.find(title)
-
-for title in titles:
-    t.append(title.text.replace("[edit]",""))
-
-
-links = list(r.html.absolute_links)
-
-resources = t + links
-
-print(resources)
+# title = "h1"
+# titles = r.html.find(title)
+#
+# for title in titles:
+#     t.append(title.text.replace("[edit]",""))
+#
+#
+# links = list(r.html.absolute_links)
+#
+# resources = t + links
+#
+# print(resources)
 
