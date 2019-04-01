@@ -12,3 +12,4 @@ however it needs to fulfill the following specs:
 TIP: consider using a cryptocurrency API such as coinmarketcap (but anything goes)!
 
 '''
+
