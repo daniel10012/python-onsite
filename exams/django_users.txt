@@ -12,7 +12,7 @@ so we can pass the info from the form to the db
 3) What's the advantage for using Django for authentication?
 premade models, security
 
-4) How did we write the authentication for  users
+4) How did we write the authentication for users
 
 
 -
