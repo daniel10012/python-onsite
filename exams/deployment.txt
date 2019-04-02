@@ -3,14 +3,42 @@ HEROKU DEPLOYMENT / SWITCHING DJANGO'S DB BACKEND
 
 1) High level steps to get our project up and running on Heroku
 
+register heroku
+pip install django heroku
+install heroku command line (download)
+heroku crete
+create heroku app in the project, put it in settings.py
+migrate the database and start the development server : python manage.py migrate
+start dvt server python manage.py runserver
+heroku login
+add procfile in  the project root and add in: web: gunicorn djangoherokuapp.wsgi --log-file -
+(django_env):~/Desktop/djangoherokuapp$ pip install gunicorn dj-database-url whitenoise psycopg2
+pip freeze > requirements.txt
+Set Up the Static Assets in setting.py
+Update Database Configuration in settings.py
+Create App in Heroku from terminal
+
 2) What do we need to prepend to a python command in order to
 run code remotely on a Heroku server?
 
+heroku run (manage.py shell, manage.py blabla -> opens on the server)
+
+
 3) What does a database connection string consist of?
+
+port, name of DB, username, password, engine + driver (postgress psycopg2), host:localhost(ip adress)  (we put that on top of sqlalchemyfiles)
+f'postgresql://{username}:{password}@localhost/dvdrentals'
 
 4) Where do the parts of Q3 go in Django?
 
+settings.py
+
 5) High level steps to migrate a DB from SQLite to Postgres
+
+datadump
+git add . git commit git push
+heroku run make  migrate
+herokunrun loaddata nameofthefile
 
 
 YOUR QUESTIONS
@@ -19,12 +47,18 @@ YOUR QUESTIONS
 3) BLAKE: Working with different branches and pushing to Heroku, how can we guarantee uptime?
 
 
+
 5) MING: After changing data ownership permissions, what steps you need to follow to make
 	that reflected in your app?
+
+migrate database locally and push changes
 
 7) ROBERT:
 	* How to use static files (CSS, JS) with Django on a server?
 	* How to push your database information up to a remote DB on Heroku?
 
 
+
 10: ARNO: How do you handle your SECRET_KEY with Heroku?
+
+secrets file
